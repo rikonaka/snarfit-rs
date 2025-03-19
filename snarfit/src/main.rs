@@ -6,9 +6,9 @@ mod state;
 
 pub struct FState {
     // f_state in foremost code
-    pub mode: usize,
+    pub mode: Mode,
     pub config_file: String,
-    pub input_file: String,
+    pub input_file: Option<String>,
     pub output_directory: String,
     pub start_time: DateTime<Local>,
     pub invocation: String,
@@ -23,7 +23,7 @@ pub struct FState {
     pub time_stamp: u64,
 }
 
-pub enum MODE {
+pub enum Mode {
     None,
     Verbose,
     Quiet,
